@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>6 Mans</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css" />
+    <style>
+        .table th,
+        .table td {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero is-dark">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title has-text-centered" id="guild-name">
+                    Leaderboards for <%=title%>
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Win</th>
+                    <th>Loss</th>
+                    <th><abbr title="Win Difference">+/-</abbr></th>
+                    <th><abbr title="Win Percentage">%</abbr></th>
+                </tr>
+                </thead>
+                <tbody id="leaderboard-table">
+                <%let i = 1%>
+                <%for(let user of users){if(!(user.wins === 0 && user.losses === 0)){%>
+                <tr>
+                    <th><%=i%></th>
+                    <th><%=user.username%></th>
+                    <th><%=user.wins%></th>
+                    <th><%=user.losses%></th>
+                    <th><%=user.wins - user.losses%></th>
+                    <th><%=(Math.round((user.wins*10000)/(user.wins+user.losses)))/100%>%</th>
+                </tr>
+                <%}}%>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+
+</html>
