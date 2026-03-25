@@ -1,5 +1,7 @@
 # Private 6 Mans (v2)
 
+Verified Discord bot for Rocket League matchmaking and lobby creation
+
 This repository is for archival purposes only. This is **BAD CODE** that **DOES NOT** reflect my current abilities as a developer!!!
 
 Somehow, this code was able to handle ~2500 servers
